@@ -10,9 +10,10 @@ router.post("/add",async(req,res)=>{
     res.send({status:"success"})
 })
 
-// router.get("/view",(req,res)=>{
-//     res.send("view students")
-// })
+router.get("/view",async(req,res)=>{
+    let data=await examModels.find()
+    res.json(data)
+})
 
 module.exports=router
 
